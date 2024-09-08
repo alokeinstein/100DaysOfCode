@@ -1,0 +1,16 @@
+.container{
+  display: flex;
+  flex-flow:wrap;
+  /* flex-flow: row wrap; */
+  justify-content: center;
+ justify-content: space-evenly;
+}
+ 
+.card{
+  margin-top: 20px;
+  display: flex;
+}
+
+.desc{
+  flex-grow:1;/* takes all the available spaces and pushes the button to the bottom of the card */
+}

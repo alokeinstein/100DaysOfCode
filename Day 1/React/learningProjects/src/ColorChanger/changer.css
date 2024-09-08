@@ -1,0 +1,29 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.button-div{
+    display: flex;
+    flex-direction: row;
+    gap: 2vh;
+    margin: 3vh 0 15vh 0;
+    /* margin:2vh 25vw 2vh 40vw; */
+}
+button{
+    border-radius: 10px;
+    height: 6vh;
+    padding: 0 18px 0 18px ;
+    font-size: 3vh;
+}
+
+.color-name{
+    font-size: 3rem;
+    font-weight: bolder;
+    color: white;
+}

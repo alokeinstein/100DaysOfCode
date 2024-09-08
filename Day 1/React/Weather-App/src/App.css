@@ -1,0 +1,27 @@
+.main,.card, .header, .body, .footer, .search,.autoComplete{
+  display: flex;
+}
+.main{
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 20px ;
+  width: 20rem;
+  padding: 10px 10px 10px 10px;
+}
+.card,.body,.footer,.header, .autoComplete,.search{
+  flex-direction: column;
+}
+
+.search{
+  
+  justify-content: space-between;
+}
+input{
+  margin-bottom:.5rem ;
+}
+.list-item{
+  border: 1px solid black;
+  border-top: none;
+  border-radius: 8px;
+  padding: 5px;
+}

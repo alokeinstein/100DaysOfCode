@@ -1,0 +1,47 @@
+body{
+  background-color: beige;
+}
+
+
+.form-container{
+  /* display: inline-block; */
+  display: flex; 
+  justify-content: center;
+  box-shadow: 10px 10px 15px 5px rgba(64, 33, 33, 0.3);
+  padding :10px;
+  background-color: rgb(166, 166, 176);
+  border-radius: 40px;
+  
+
+
+  border: 1px solid #ccc;
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.5),
+  inset 2px 2px 5px rgba(0, 0, 0, 0.2),        
+  2px 2px 5px rgba(0, 0, 0, 0.2);              
+  transition: box-shadow 0.2s ease;
+}
+
+
+.form-container:focus{
+  outline: none;
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.7),
+              inset 2px 2px 5px rgba(0, 0, 0, 0.3),
+              2px 2px 10px rgba(0, 0, 0, 0.249); /* Slightly more intense outer shadow */
+}
+
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;/* to make the .form-container in the center of the page, first i need to give the parent container full height of the page */
+}
+
+.input{
+  border-radius: 30px;
+  /* padding:15px; */
+  background-color: rgb(224, 202, 202);
+  color:rgb(8, 90, 233);
+  font-size: 15px;
+  margin-right: 10px;
+}

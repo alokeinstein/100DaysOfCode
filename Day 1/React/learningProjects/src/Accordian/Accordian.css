@@ -1,0 +1,85 @@
+html,body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(66, 66, 66);
+    color: white;
+  }
+  .accordian{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    width: 80vw;
+    margin: auto;
+    margin-top: 2vh;
+    border-radius: 10px;
+    padding: 1vh 2vw 2vh 2vw;
+    overflow: hidden;
+  }
+  
+  .accordian-item{
+    border: 2px solid rgb(121, 116, 116);
+    border-radius: 10px;
+    margin-bottom: 1vh;
+    padding:0 1vw 0 1vw;
+  
+  }
+  
+  /* hr{
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    width: 80vw;
+  
+  }
+   */
+  .accordian-header{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  h2,p{
+    margin-top: 0;
+  }
+  .expand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    border:none;
+    padding:0;
+    background-color: rgb(178, 180, 180);
+    cursor: pointer;
+    width:5vw;
+    height: 30px;
+    border-radius: 5px;
+  
+  }
+  
+  .accordian-content{
+    margin-top: 0;
+  }
+
+  .enable-selection{
+    width: 20vw;
+    background-color: rgb(71, 71, 71);
+    color: white;
+    margin:auto;
+    cursor:pointer;
+    
+    &:hover{
+      background-color: rgb(100, 100, 100);
+    }
+  }
+
+
+  .multi-span{
+    transition: transform 0.3 ease;
+    font: bolder;
+    &:hover{
+      background-color: rgb(100, 100, 100);
+      transform: scale(1.3);
+
+    }
+  }
