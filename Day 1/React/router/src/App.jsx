@@ -14,6 +14,9 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
+      //Home component ke pehle Navbar isliye likha hai kyuki mai chahta hu jab bhi home component render ho usse pehle meri UI pe Navbar dikhe or mai aisa har page ke saath isliye kar rha hu jaise ki login,about  kyuki muje har page ke top pe apna navbar show karwana hai 
+
+      //agar mai element: <><Home/><Navbar/></>aise likhu to fir mera home component pehle render hoga UI pe and upar dikhega then mera Navbar neeche dikhega
       element: <><Navbar /><Home /></>
     },
     {
