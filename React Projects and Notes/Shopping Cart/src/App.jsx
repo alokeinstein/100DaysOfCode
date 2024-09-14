@@ -12,7 +12,7 @@ const App = () => {
       path: '/',
       element:<><Navbar/><Home/></>,
     },
-    {
+    { 
       path: '/cart',
       element:<><Navbar/><Cart/></> 
     },
@@ -34,7 +34,6 @@ const App = () => {
       <CounterProvider>
        <RouterProvider router={router} />
       </CounterProvider>
-  
   )
 }
 

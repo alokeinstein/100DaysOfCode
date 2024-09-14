@@ -12,8 +12,8 @@
     overflow-x: hidden; /* Prevent horizontal scrolling */
   }
   
-  /* Main container for the products */
-  .main {
+  /* home-main container for the products */
+  .home-main {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,7 +24,7 @@
   }
   
   /* Inside container for the product grid */
-  .inside-main {
+  .inside-home-main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Create responsive grid layout */
     gap: 20px;
@@ -33,8 +33,8 @@
     margin: 0 auto;
   }
   
-  /* Product card styling */
-  .card {
+  /* Product home-card styling */
+  .home-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,14 +45,14 @@
     transition: transform 0.3s ease;
   }
   
-  .card img {
+  .home-card img {
     width: 100%; /* Make image responsive */
     height: auto;
     object-fit: cover;
     border-radius: 5px;
   }
   
-  .card:hover {
+  .home-card:hover {
     transform: translateY(-10px); /* Hover effect */
   }
   
@@ -70,7 +70,7 @@
   }
   
   /* Load More button styling */
-  .btn {
+  .home-btn {
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -100,11 +100,11 @@
   
   /* Responsive adjustments for tablets and smaller devices */
   @media (max-width: 768px) {
-    .card {
+    .home-card {
       padding: 10px;
     }
   
-    .btn {
+    .home-btn {
       width: 90%;
     }
   
@@ -115,15 +115,15 @@
   
   /* Responsive adjustments for mobile phones */
   @media (max-width: 480px) {
-    .inside-main {
+    .inside-home-main {
       grid-template-columns: 1fr; /* Single column layout on small screens */
     }
   
-    .card img {
+    .home-card img {
       width: 100%; /* Ensure images stay within the container */
     }
   
-    .btn {
+    .home-btn {
       margin-top: 15px;
     }
   

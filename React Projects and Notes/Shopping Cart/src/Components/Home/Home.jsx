@@ -53,14 +53,14 @@ const Home = () => {
 
   
   return (
-    <div className="main">
-      <div className="inside-main">
+    <div className="home-main">
+      <div className="inside-home-main">
         {loading ? (
           <p>Loading data! Please wait.</p>
         ) : (
           product.map((item) => (
             <NavLink to='/productPage' key={item.id} onClick={() => setSelectedProduct(item)}>
-            <div className="card" >
+            <div className="home-card" >
               <img src={item.thumbnail} alt={item.brand}/>
               <p className="productName">
                 {!item.brand ? item.tags[0] : item.brand}
@@ -73,7 +73,7 @@ const Home = () => {
       </div>
 
       {/* Load More button section */}
-      <div className="btn">
+      <div className="home-btn">
         {/* Button to load more products */}
         <button
           className="loadMoreData"
