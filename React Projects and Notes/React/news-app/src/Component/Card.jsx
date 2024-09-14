@@ -7,7 +7,7 @@ const Card = () => {
   const [data, setData] = useState([]);
 
   const newsAPI = "b7439e5d313a4cdc846da6372bca2bd4";
-  const url = `https://newsapi.org/v2/top-headlines?country=in&pageSize=100&apiKey=${newsAPI}`;
+  const url = `https://newsapi.org/v2/top-headlines?country=us&pageSize=100&apiKey=${newsAPI}`;
   useEffect(() => {
   const  fetchNews = async () => {
         try {
@@ -19,7 +19,7 @@ const Card = () => {
           console.error("Some error occured: ", error);
         }
       };
-    fetchNews();//it is called inside the useEffect because useEffect runs after the component has been rendered. so if we use the function in the component then the code will throw an error and it will show that the funtion has not been defined because the component runs before the useEffect
+    fetchNews();//it is called inside the useEffect because useEffect runs after the component has been rendered. so if we use the function in the component then the code will throw an error and it will show that the funtion has not been defined because the component runs before the useEffect                     
   },[url])
   
  

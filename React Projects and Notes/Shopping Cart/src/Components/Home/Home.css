@@ -1,0 +1,135 @@
+/* Reset margins and paddings for consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  
+  /* Main container for the products */
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+    padding-top: 4rem;
+  }
+  
+  /* Inside container for the product grid */
+  .inside-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Create responsive grid layout */
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* Limit max width for larger screens */
+    margin: 0 auto;
+  }
+  
+  /* Product card styling */
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .card img {
+    width: 100%; /* Make image responsive */
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px); /* Hover effect */
+  }
+  
+  .productName {
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+  }
+
+  /* ye line sali kaam ni kar rhi */
+  .productName a {
+    text-decoration: none !important;  
+    color:inherit !important;
+  }
+  
+  /* Load More button styling */
+  .btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .loadMoreData {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .loadMoreData:disabled {
+    background-color: #888; /* Disabled button styling */
+    cursor: not-allowed;
+  }
+  
+  .loadMoreData:hover:not(:disabled) {
+    background-color: #45a049;
+  }
+  
+  /* Responsive adjustments for tablets and smaller devices */
+  @media (max-width: 768px) {
+    .card {
+      padding: 10px;
+    }
+  
+    .btn {
+      width: 90%;
+    }
+  
+    .loadMoreData {
+      width: 100%; /* Button takes full width on small screens */
+    }
+  }
+  
+  /* Responsive adjustments for mobile phones */
+  @media (max-width: 480px) {
+    .inside-main {
+      grid-template-columns: 1fr; /* Single column layout on small screens */
+    }
+  
+    .card img {
+      width: 100%; /* Ensure images stay within the container */
+    }
+  
+    .btn {
+      margin-top: 15px;
+    }
+  
+    .loadMoreData {
+      font-size: 14px; /* Smaller text for buttons on mobile */
+      padding: 8px 15px;
+    }
+  }
+  
