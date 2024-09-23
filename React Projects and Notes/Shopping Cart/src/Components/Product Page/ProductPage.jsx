@@ -67,6 +67,7 @@ const ProductPage = () => {
   const { selectedProduct } = useContext(counterContext); // Access selected product
   const [currentIndex, setCurrentIndex] = useState(0);
 
+
   const handleNext = () => {
     setCurrentIndex((prevIndex) => 
       prevIndex === selectedProduct.images.length - 1 ? 0 : prevIndex + 1
@@ -96,7 +97,7 @@ const ProductPage = () => {
                 <img src={selectedProduct.images[currentIndex]} className="product-image" alt="Product" />
                 <div className="indicator">
                   {selectedProduct.images.map((_, index) => (
-                    <div key={index} onClick={() => handleIndicator(index)} className={index === currentIndex ? "active" : ""}></div>
+                     <div key={index} onClick={() => handleIndicator(index)} className={index === currentIndex ? "active" : ""}></div>
                   ))}
                 </div>
               </div>
