@@ -1,0 +1,4 @@
+//Understanding the SQL AND No-SQL
+    SQL: Structured Query language
+    No-SQL: Not Only Structured Query language
+    ORM: 
