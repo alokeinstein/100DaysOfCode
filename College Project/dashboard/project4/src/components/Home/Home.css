@@ -11,6 +11,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+.Home{
+  margin-right:-20px;
+}
 
 .Home .container > .flex-wrap {
   flex: 1;

@@ -1,29 +1,3 @@
-// import express from 'express'
-// import bodyParser from 'body-parser'
-// import contactRoutes from './routes/contactRoutes.js'
-// import dotenv from 'dotenv';
-// dotenv.config();
-
-
-// const app = express();
-// app.use(express.json());
-
-// app.use(bodyParser.json());
-
-// app.use('/api', contactRoutes);
-// app.use((err, req, res, next) => {
-//     console.error(err.stack);
-//     res.status(500).json({ error: err.message });
-// });
-
-
-// const PORT = process.env.PORT || 3000;
-// app.listen(PORT, () => {
-//     console.log(`Server running on port ${PORT}`);
-// });
- 
-
-
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
@@ -36,7 +10,6 @@ app.use(express.json());
 const port = process.env.PORT || 3000;
 
 
-
 // MongoDB connection using Mongoose
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
@@ -44,8 +17,6 @@ mongoose.connect(process.env.MONGO_URI, {
 })
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('Could not connect to MongoDB', err));
-
-
 
 // Define a Mongoose schema and model for customers
 const customerSchema = new mongoose.Schema({
@@ -133,7 +104,7 @@ app.put('/customers/updateContact/:id', async (req, res) => {
 
 
 // Delete a customer by ID
-app.delete('/customers/delteContact/:id', async (req, res) => {
+app.delete('/customers/deleteContact/:id', async (req, res) => {
   try {
     const deletedCustomer = await Customer.findByIdAndDelete(req.params.id); // Delete customer by ID from MongoDB
     if (!deletedCustomer) {

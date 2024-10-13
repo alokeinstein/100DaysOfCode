@@ -9,7 +9,7 @@ const Header = () => {
 
             {/* SVG Removed */}
 
-            <span className="ml-3 text-xl cursor-pointer"><a href="https://www.linkedin.com/in/alok-tiwari-518478253/">Alok Tiwari</a>
+            <span className="ml-3 text-xl cursor-pointer"><a href="https://github.com/alokeinstein">Alok Tiwari</a>
             </span>
           </a>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
