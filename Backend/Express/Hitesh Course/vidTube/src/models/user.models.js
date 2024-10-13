@@ -50,21 +50,26 @@ const userSchema = new Schema(
   { timestamps: true }//Mongoose give the in built property of timestamps which give me two fields : {createdAt: Date, updateAt:true}, this is so common that mongoose give you the option to do this 
 );
 
-//pre hook runs before saving the data in the database
+
+
+/* pre hook runs before saving the data in the database */
 userSchema.pre('save',async function(next){
   //if password is not modified then skip
-  if(!this.modified('password')) return next()
+  if(!this.isModified('password')) return next()
 
     //10 refers to the number of salt rounds, which is the cost factor for hasing.Higher number means more computation and means more security
-  this.password = bcrypt.hash(this.password, 10)
+  this.password = await bcrypt.hash(this.password, 10)
   next()
 })
 
-//bcrypt.compare compares the provided password (from the login attempt) with the stored hashed password. It returns true if they match, false otherwise.
+
+/* bcrypt.compare compares the provided password (from the login attempt) with the stored hashed password. It returns true if they match, false otherwise. */
 userSchema.methods.isPasswordcorrect = async function(password){
-  bcrypt.compare(password,this.password)
+  return await bcrypt.compare(password,this.password)
 }
 
+
+/* This method generates a JSON Web Token (JWT). */
 userSchema.methods.generateAccessToken =  function(){
   //short lived access token
   jwt.sign({ 
@@ -77,6 +82,21 @@ userSchema.methods.generateAccessToken =  function(){
   process.env.ACCESS_TOKEN_SECRET,
   {expiresIn: process.env.ACCESS_TOKEN_EXPIRY}
 );
+}
+
+
+
+userSchema.methods.generateRefreshToken = function(){
+  return jwt.sign(
+      {
+          _id: this._id,
+          
+      },
+      process.env.REFRESH_TOKEN_SECRET,
+      {
+          expiresIn: process.env.REFRESH_TOKEN_EXPIRY
+      }
+  )
 }
 
 export const User = mongoose.model("User", userSchema);

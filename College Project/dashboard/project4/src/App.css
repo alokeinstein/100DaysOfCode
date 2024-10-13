@@ -1,0 +1,12 @@
+.App {
+  display: flex;
+}
+
+.content {
+  margin-left: 230px; /* Adjust this to match sidebar width */
+  padding: 20px;
+  width: calc(100% - 230px); /* Ensure it fits the remaining space */
+  height: 100vh;
+
+}
+
