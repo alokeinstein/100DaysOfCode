@@ -1,4 +1,4 @@
-import {useState,useEffect,useRef} from "react"
+/* import {useState,useEffect,useRef} from "react"
 import Stopwatch from './Stopwatch'
 
 
@@ -43,3 +43,35 @@ function handleClick (){
 }
 
 export default App
+ */
+
+import { useState, useCallback,useRef } from 'react';
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  // Memoize the increment function
+  const increment = useCallback(() => {
+    setCount((prevCount) => prevCount + 1);
+  }, []); // Empty dependency array means this function won't change
+
+
+  let a = useRef(0)
+  const handleClick =() => {
+    a.current = a.current+1
+    console.log(a.current)
+  }
+  
+  
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+      <p>userefCount: {a.current}</p>
+      <button onClick={handleClick}>Increment</button>
+    </div>
+  );
+};
+
+export default Counter;
